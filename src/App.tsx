@@ -22,7 +22,10 @@ function App() {
           <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto leading-relaxed">
             당신의 소중한 인맥을 체계적으로 관리하세요. 캘린더와 위키가 만나 탄생한 새로운 경험, 인캘과 함께하세요.
           </p>
-          <Button icon={ArrowRight}>
+          <Button 
+            onClick={() => window.open(NOTION_FORM_URL, '_blank')}
+            icon={ArrowRight}
+          >
             사전 등록하기
           </Button>
         </div>
