@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
-import { Calendar, Users, BookOpen, Lock, ArrowRight, Check } from 'lucide-react';
+import { Calendar, Users, BookOpen, Lock, ArrowRight, Check, ExternalLink } from 'lucide-react';
 import { Button } from './components/Button';
 import { Card } from './components/Card';
 import { Input } from './components/Input';
 
 function App() {
-  const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setEmail('');
-  };
+  // 노션 폼 URL
+  const NOTION_FORM_URL = "https://typhoon-omelet-420.notion.site/8e1a5a0f0939467986c0b686579c5092?pvs=105";
 
   return (
     <div className="min-h-screen bg-surface">
@@ -29,7 +23,7 @@ function App() {
             당신의 소중한 인맥을 체계적으로 관리하세요. 캘린더와 위키가 만나 탄생한 새로운 경험, 인캘과 함께하세요.
           </p>
           <Button icon={ArrowRight}>
-            베타 신청하기
+            사전 등록하기
           </Button>
         </div>
       </header>
@@ -186,28 +180,17 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="max-w-md mx-auto text-center">
             <BookOpen className="h-16 w-16 text-primary mx-auto mb-6" strokeWidth={1.5} />
-            <h2 className="text-4xl font-bold mb-4 text-on-primary-container">베타 테스터 신청</h2>
+            <h2 className="text-4xl font-bold mb-4 text-on-primary-container">사전 등록</h2>
             <p className="text-gray-700 mb-8">
               인캘의 첫 번째 사용자가 되어보세요. 특별한 혜택과 함께 새로운 경험을 선사해드립니다.
             </p>
-            {submitted ? (
-              <Card className="bg-surface p-6">
-                <p className="text-primary font-medium">신청해주셔서 감사합니다! 곧 연락드리겠습니다.</p>
-              </Card>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <Input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="이메일을 입력해주세요"
-                  required
-                />
-                <Button type="submit" fullWidth>
-                  베타 테스터 신청하기
-                </Button>
-              </form>
-            )}
+            <Button 
+              onClick={() => window.open(NOTION_FORM_URL, '_blank')}
+              icon={ExternalLink}
+              fullWidth
+            >
+              사전 등록하기
+            </Button>
           </div>
         </div>
       </section>
