@@ -19,8 +19,11 @@ function App() {
           <h1 className="text-6xl font-bold text-on-primary-container mb-6 tracking-tight">
             인맥 관리의 새로운 패러다임
           </h1>
-          <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto leading-relaxed">
-            당신의 소중한 인맥을 체계적으로 관리하세요. 캘린더와 위키가 만나 탄생한 새로운 경험, 인캘과 함께하세요.
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
+            당신의 소중한 인맥을 체계적으로 관리하세요. 
+          </p>
+          <p className='text-xl text-gray-700 mb-8  max-w-2xl mx-auto leading-relaxed'>
+            캘린더와 위키가 만나 탄생한 새로운 경험, 인캘과 함께하세요.
           </p>
           <Button 
             onClick={() => window.open(NOTION_FORM_URL, '_blank')}
@@ -32,27 +35,27 @@ function App() {
       </header>
 
       {/* Features */}
-      <section className="py-24 -mt-20">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
+      <section className="py-10">
+        <div className="container mx-auto px-1">
+          <div className="grid md:grid-cols-3 gap-4">
             {[
               {
                 icon: Calendar,
                 title: "스마트 캘린더",
                 description: "기존 캘린더와 완벽한 연동. 인맥 관리에 최적화된 새로운 캘린더 경험을 제공합니다.",
-                image: "https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=2000&q=80"
+                image: "src/assets/8511943_3942239.jpg"
               },
               {
                 icon: Users,
                 title: "인맥 위키",
                 description: "만남의 순간을 기록하고 관리하세요. AI가 당신의 소중한 관계를 더욱 깊이있게 만들어드립니다.",
-                image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=2000&q=80"
+                image: "src/assets/networking-concept-still-life-arrangement-min.jpg"
               },
               {
                 icon: Lock,
                 title: "프라이버시 중심",
                 description: "당신의 소중한 정보를 안전하게 보호합니다. 철저한 보안과 프라이버시 보호를 약속드립니다.",
-                image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=2000&q=80"
+                image: "src/assets/11668693_20945274-min.jpg"
               }
             ].map((feature, index) => (
               <Card key={index} className="p-6 flex flex-col">
@@ -70,6 +73,73 @@ function App() {
                 />
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile Experience */}
+      <section className="py-20 bg-surface-container-low overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            {/* Mobile Screenshots */}
+            <div className="relative flex-1 min-h-[600px]">
+              {/* First Phone - 왼쪽으로 이동하고 회전 각도 줄임 */}
+              <div className="absolute top-0 left-[40%] -translate-x-1/2 w-[280px] transform rotate-[-8deg]">
+                <div className="relative bg-black rounded-[50px] p-4 shadow-2xl">
+                  {/* Screen */}
+                  <div className="relative rounded-[35px] overflow-hidden h-[500px]">
+                    <img
+                      src="src/assets/stoic. iOS 20.png"
+                      alt="Mobile App Screen 2"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  {/* Home Indicator */}
+                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-[120px] h-1 bg-gray-600 rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Second Phone - 오른쪽으로 이동하고 회전 각도 줄임 */}
+              <div className="absolute top-0 left-[70%] -translate-x-1/2 w-[280px] transform rotate-[8deg] translate-y-12">
+                <div className="relative bg-black rounded-[50px] p-4 shadow-2xl">
+                  {/* Screen */}
+                  <div className="relative rounded-[35px] overflow-hidden h-[500px]">
+                    <img
+                      src="src/assets/stoic. iOS 20.png"
+                      alt="Mobile App Screen 2"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  {/* Home Indicator */}
+                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-[120px] h-1 bg-gray-600 rounded-full"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 lg:pl-8">
+              <h2 className="text-4xl font-bold mb-6">
+                언제 어디서나<br />
+                손쉽게 관리하세요
+              </h2>
+              <div className="space-y-6">
+                {[
+                  {
+                    title: '직관적인 모바일 경험',
+                    description: '최적화된 모바일 인터페이스로 이동 중에도 쉽게 기록하고 관리할 수 있습니다.'
+                  },
+                  {
+                    title: '실시간 알림',
+                    description: '중요한 일정과 기념일을 놓치지 않도록 스마트한 알림을 제공합니다.'
+                  },
+                ].map((item, index) => (
+                  <div key={index} className="bg-surface rounded-2xl p-6 shadow-sm">
+                    <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                    <p className="text-gray-600">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -156,9 +226,9 @@ function App() {
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-6">이런 분들께 추천드려요</h2>
               <img
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=2850&q=80"
+                src="src/assets/blue-monday-concept-with-copy-space.jpg"
                 alt="Collaboration"
-                className="w-full h-64 object-cover rounded-3xl shadow-lg"
+                className="w-full h-[20vw] rounded-3xl shadow-lg"
               />
             </div>
             <div className="space-y-4">
@@ -184,8 +254,11 @@ function App() {
           <div className="max-w-md mx-auto text-center">
             <BookOpen className="h-16 w-16 text-primary mx-auto mb-6" strokeWidth={1.5} />
             <h2 className="text-4xl font-bold mb-4 text-on-primary-container">사전 등록</h2>
+            <p className="text-gray-700">
+              인캘의 첫 번째 사용자가 되어보세요. 
+            </p>
             <p className="text-gray-700 mb-8">
-              인캘의 첫 번째 사용자가 되어보세요. 특별한 혜택과 함께 새로운 경험을 선사해드립니다.
+              특별한 혜택과 함께 새로운 경험을 선사해드립니다.
             </p>
             <Button 
               onClick={() => window.open(NOTION_FORM_URL, '_blank')}
