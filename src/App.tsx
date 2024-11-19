@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
 import { Calendar, Users, BookOpen, Lock, ArrowRight, Check, ExternalLink } from 'lucide-react';
 import { Button } from './components/Button';
 import { Card } from './components/Card';
-import { Input } from './components/Input';
 
 function App() {
   // 노션 폼 URL
@@ -11,23 +9,27 @@ function App() {
   return (
     <div className="min-h-screen bg-surface">
       {/* Hero Section */}
-      <header className="relative px-4 pt-24 pb-40 text-center bg-primary-container">
+      <header className="relative px-4 pt-16 sm:pt-24 pb-24 sm:pb-40 text-center bg-primary-container">
         <div className="container mx-auto">
-          <div className="flex justify-center mb-8">
-            <Calendar className="h-20 w-20 text-primary" strokeWidth={1.5} />
+          <div className="flex justify-center mb-6 sm:mb-8">
+            <Calendar className="h-16 w-16 sm:h-20 sm:w-20 text-primary" strokeWidth={1.5} />
           </div>
-          <h1 className="text-6xl font-bold text-on-primary-container mb-6 tracking-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-on-primary-container mb-4 sm:mb-6 tracking-tight">
             인맥 관리의 새로운 패러다임
           </h1>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed px-4">
             당신의 소중한 인맥을 체계적으로 관리하세요. 
           </p>
-          <p className='text-xl text-gray-700 mb-8  max-w-2xl mx-auto leading-relaxed'>
-            캘린더와 위키가 만나 탄생한 새로운 경험, 인캘과 함께하세요.
+          <p className="text-lg sm:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed px-4">
+            캘린더와 위키가 만나 탄생한 새로운 경험, 
+          </p>
+          <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed px-4 font-bold">
+            인캘과 함께하세요.
           </p>
           <Button 
             onClick={() => window.open(NOTION_FORM_URL, '_blank')}
             icon={ArrowRight}
+            className="text-base sm:text-lg px-8 py-3"
           >
             사전 등록하기
           </Button>
@@ -35,9 +37,9 @@ function App() {
       </header>
 
       {/* Features */}
-      <section className="py-10">
-        <div className="container mx-auto px-1">
-          <div className="grid md:grid-cols-3 gap-4">
+      <section className="py-12 sm:py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
                 icon: Calendar,
@@ -58,18 +60,18 @@ function App() {
                 image: "/images/11668693_20945274-min.jpg"
               }
             ].map((feature, index) => (
-              <Card key={index} className="p-6 flex flex-col">
-                <div className="flex items-center mb-6">
-                  <feature.icon className="h-8 w-8 text-primary" strokeWidth={1.5} />
-                  <h3 className="text-xl font-semibold ml-3">{feature.title}</h3>
+              <Card key={index} className="p-4 sm:p-6 flex flex-col">
+                <div className="flex items-center mb-4 sm:mb-6">
+                  <feature.icon className="h-6 w-6 sm:h-8 sm:w-8 text-primary" strokeWidth={1.5} />
+                  <h3 className="text-lg sm:text-xl font-semibold ml-3">{feature.title}</h3>
                 </div>
-                <p className="text-gray-600 mb-6 flex-grow">
+                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 flex-grow">
                   {feature.description}
                 </p>
                 <img
                   src={feature.image}
                   alt={feature.title}
-                  className="w-full h-48 object-cover rounded-2xl"
+                  className="w-full h-40 sm:h-48 object-cover rounded-2xl"
                 />
               </Card>
             ))}
@@ -148,26 +150,26 @@ function App() {
       </section>
 
       {/* Mind Map Section */}
-      <section className="py-24 bg-surface">
+      <section className="py-16 sm:py-24 bg-surface">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-16">
+            <h2 className="text-2xl sm:text-4xl font-bold text-center mb-12 sm:mb-16">
               인맥 위키로 관리하는 인간관계
             </h2>
             <div className="relative">
-              {/* Center Circle */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48">
-                <div className="w-full h-full rounded-full border-2 border-black bg-white shadow-lg flex items-center justify-center p-4">
+              {/* Center Circle
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 sm:w-48 h-32 sm:h-48 z-20">
+                <div className="w-full h-full rounded-full border-2 border-black bg-white shadow-lg flex items-center justify-center p-3 sm:p-4">
                   <img
                     src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&w=800&q=80"
                     alt="Profile"
-                    className="w-32 h-32 rounded-full object-cover"
+                    className="w-24 sm:w-32 h-24 sm:h-32 rounded-full object-cover"
                   />
                 </div>
-              </div>
+              </div> */}
               
               {/* Connection Lines */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 min-h-[600px]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                 {[
                   {
                     title: "직장 동료",
@@ -223,18 +225,18 @@ function App() {
       </section>
 
       {/* Use Case */}
-      <section className="py-24 bg-surface-container-low">
+      <section className="py-16 sm:py-24 bg-surface-container-low">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">이런 분들께 추천드려요</h2>
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-6">이런 분들께 추천드려요</h2>
               <img
                 src="/images/blue-monday-concept-with-copy-space.jpg"
                 alt="Collaboration"
-                className="w-full h-48 md:h-64 lg:h-[20vw] object-cover rounded-3xl shadow-lg"
+                className="w-full h-48 sm:h-64 lg:h-80 object-cover rounded-3xl shadow-lg"
               />
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {[
                 '인맥 관리에 어려움을 느끼시는 분',
                 '중요한 약속과 만남을 체계적으로 관리하고 싶으신 분',
@@ -252,21 +254,22 @@ function App() {
       </section>
 
       {/* Waitlist Form */}
-      <section id="waitlist" className="py-24 bg-primary-container">
+      <section id="waitlist" className="py-16 sm:py-24 bg-primary-container">
         <div className="container mx-auto px-4">
           <div className="max-w-md mx-auto text-center">
-            <BookOpen className="h-16 w-16 text-primary mx-auto mb-6" strokeWidth={1.5} />
-            <h2 className="text-4xl font-bold mb-4 text-on-primary-container">사전 등록</h2>
-            <p className="text-gray-700">
+            <BookOpen className="h-12 w-12 sm:h-16 sm:w-16 text-primary mx-auto mb-6" strokeWidth={1.5} />
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-on-primary-container">사전 등록</h2>
+            <p className="text-base sm:text-lg text-gray-700">
               인캘의 첫 번째 사용자가 되어보세요. 
             </p>
-            <p className="text-gray-700 mb-8">
+            <p className="text-base sm:text-lg text-gray-700 mb-8">
               특별한 혜택과 함께 새로운 경험을 선사해드립니다.
             </p>
             <Button 
               onClick={() => window.open(NOTION_FORM_URL, '_blank')}
               icon={ExternalLink}
               fullWidth
+              className="text-base sm:text-lg py-3"
             >
               사전 등록하기
             </Button>
