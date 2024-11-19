@@ -82,36 +82,39 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             {/* Mobile Screenshots */}
-            <div className="relative flex-1 min-h-[600px]">
-              {/* First Phone - 왼쪽으로 이동하고 회전 각도 줄임 */}
-              <div className="absolute top-0 left-[40%] -translate-x-1/2 w-[280px] transform rotate-[-8deg]">
-                <div className="relative bg-black rounded-[50px] p-4 shadow-2xl">
-                  {/* Screen */}
-                  <div className="relative rounded-[35px] overflow-hidden h-[500px]">
+            <div className="relative flex-1 min-h-[500px] w-full">
+              {/* First Phone */}
+              <div className="absolute left-1/2 transform 
+                              -translate-x-[80%] md:-translate-x-[60%] lg:-translate-x-[80%]
+                              w-[200px] sm:w-[240px] lg:w-[280px]
+                              rotate-[-8deg] z-10">
+                <div className="relative bg-black rounded-[35px] p-2 sm:p-3 shadow-2xl">
+                  <div className="relative rounded-[28px] overflow-hidden aspect-[9/19.5]">
                     <img
                       src="/images/mobile-screen.png"
-                      alt="Mobile App Screen 2"
+                      alt="Mobile App Screen 1"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  {/* Home Indicator */}
-                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-[120px] h-1 bg-gray-600 rounded-full"></div>
+                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-16 sm:w-20 h-1 bg-gray-600 rounded-full"></div>
                 </div>
               </div>
 
-              {/* Second Phone - 오른쪽으로 이동하고 회전 각도 줄임 */}
-              <div className="absolute top-0 left-[70%] -translate-x-1/2 w-[280px] transform rotate-[8deg] translate-y-12">
-                <div className="relative bg-black rounded-[50px] p-4 shadow-2xl">
-                  {/* Screen */}
-                  <div className="relative rounded-[35px] overflow-hidden h-[500px]">
+              {/* Second Phone */}
+              <div className="absolute left-1/2 transform 
+                              -translate-x-[20%] md:-translate-x-[40%] lg:-translate-x-[20%]
+                              translate-y-8 sm:translate-y-12 lg:translate-y-16
+                              w-[200px] sm:w-[240px] lg:w-[280px]
+                              rotate-[8deg]">
+                <div className="relative bg-black rounded-[35px] p-2 sm:p-3 shadow-2xl">
+                  <div className="relative rounded-[28px] overflow-hidden aspect-[9/19.5]">
                     <img
                       src="/images/mobile-screen.png"
                       alt="Mobile App Screen 2"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  {/* Home Indicator */}
-                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-[120px] h-1 bg-gray-600 rounded-full"></div>
+                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-16 sm:w-20 h-1 bg-gray-600 rounded-full"></div>
                 </div>
               </div>
             </div>
@@ -164,7 +167,7 @@ function App() {
               </div>
               
               {/* Connection Lines */}
-              <div className="grid grid-cols-3 gap-8 min-h-[600px]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 min-h-[600px]">
                 {[
                   {
                     title: "직장 동료",
@@ -198,7 +201,7 @@ function App() {
                   }
                 ].map((item, index) => (
                   <div key={index} className={`
-                    ${index < 3 ? 'mt-8' : 'mb-8'}
+                    ${index < 3 ? 'lg:mt-8' : 'lg:mb-8'}
                     relative
                   `}>
                     <Card className="p-4 hover:scale-105 transition-transform duration-300">
@@ -210,7 +213,7 @@ function App() {
                       <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
                       <p className="text-sm text-gray-600">{item.details}</p>
                     </Card>
-                    <div className="absolute left-1/2 top-1/2 w-16 h-px bg-gray-300"></div>
+                    <div className="absolute left-1/2 top-1/2 w-16 h-px bg-gray-300 hidden lg:block"></div>
                   </div>
                 ))}
               </div>
@@ -228,7 +231,7 @@ function App() {
               <img
                 src="/images/blue-monday-concept-with-copy-space.jpg"
                 alt="Collaboration"
-                className="w-full h-[20vw] rounded-3xl shadow-lg"
+                className="w-full h-48 md:h-64 lg:h-[20vw] object-cover rounded-3xl shadow-lg"
               />
             </div>
             <div className="space-y-4">
