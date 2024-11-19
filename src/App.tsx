@@ -89,7 +89,7 @@ function App() {
                   {/* Screen */}
                   <div className="relative rounded-[35px] overflow-hidden h-[500px]">
                     <img
-                      src="src/assets/stoic. iOS 20.png"
+                      src="/images/mobile-screen.png"
                       alt="Mobile App Screen 2"
                       className="w-full h-full object-cover"
                     />
@@ -105,7 +105,7 @@ function App() {
                   {/* Screen */}
                   <div className="relative rounded-[35px] overflow-hidden h-[500px]">
                     <img
-                      src="src/assets/stoic. iOS 20.png"
+                      src="/images/mobile-screen.png"
                       alt="Mobile App Screen 2"
                       className="w-full h-full object-cover"
                     />
