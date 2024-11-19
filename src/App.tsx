@@ -43,19 +43,19 @@ function App() {
                 icon: Calendar,
                 title: "스마트 캘린더",
                 description: "기존 캘린더와 완벽한 연동. 인맥 관리에 최적화된 새로운 캘린더 경험을 제공합니다.",
-                image: "src/assets/8511943_3942239.jpg"
+                image: "/images/8511943_3942239.jpg"
               },
               {
                 icon: Users,
                 title: "인맥 위키",
                 description: "만남의 순간을 기록하고 관리하세요. AI가 당신의 소중한 관계를 더욱 깊이있게 만들어드립니다.",
-                image: "src/assets/networking-concept-still-life-arrangement-min.jpg"
+                image: "/images/networking-concept-still-life-arrangement-min.jpg"
               },
               {
                 icon: Lock,
                 title: "프라이버시 중심",
                 description: "당신의 소중한 정보를 안전하게 보호합니다. 철저한 보안과 프라이버시 보호를 약속드립니다.",
-                image: "src/assets/11668693_20945274-min.jpg"
+                image: "/images/11668693_20945274-min.jpg"
               }
             ].map((feature, index) => (
               <Card key={index} className="p-6 flex flex-col">
@@ -226,7 +226,7 @@ function App() {
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-6">이런 분들께 추천드려요</h2>
               <img
-                src="src/assets/blue-monday-concept-with-copy-space.jpg"
+                src="/images/blue-monday-concept-with-copy-space.jpg"
                 alt="Collaboration"
                 className="w-full h-[20vw] rounded-3xl shadow-lg"
               />
