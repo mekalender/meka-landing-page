@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #000000;
+    --primary-container: #F5F5F5;
+    --on-primary: #FFFFFF;
+    --on-primary-container: #000000;
+    --surface: #FFFFFF;
+    --surface-container: #FFFFFF;
+    --surface-container-low: #FAFAFA;
+    --surface-container-high: #F0F0F0;
+  }
+}
+
+@layer components {
+  .material-button {
+    @apply px-6 py-2.5 rounded-full font-medium transition-all duration-200
+           shadow-[0_1px_2px_0_rgba(0,0,0,0.05)]
+           hover:shadow-[0_2px_4px_0_rgba(0,0,0,0.1)]
+           active:shadow-[0_1px_2px_0_rgba(0,0,0,0.05)];
+  }
+
+  .material-card {
+    @apply bg-white rounded-2xl border border-gray-100
+           shadow-[0_1px_2px_0_rgba(0,0,0,0.05)]
+           hover:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]
+           transition-all duration-200;
+  }
+
+  .material-input {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200
+           focus:border-black focus:ring-2 focus:ring-gray-100
+           focus:outline-none
+           transition-all duration-200;
+  }
+}
